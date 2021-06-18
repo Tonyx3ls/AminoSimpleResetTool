@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Tonyx3ls/AminoSimpleResetTool#readme",
   "dependencies": {
-    "figlet": "^1.5.0"
+    "colors": "^1.4.0",
+    "figlet": "^1.5.0",
+    "inquirer": "^8.1.1"
   }
 }
