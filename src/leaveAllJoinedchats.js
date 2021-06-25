@@ -55,10 +55,9 @@ async function leaveAllJoinedChats() {
       } else {
         chatName = chat.title;
       }
-
       totalChats.push({
         name: chatName,
-        id: chatId,
+        id: chat.threadId,
       });
     });
 
@@ -71,11 +70,11 @@ async function leaveAllJoinedChats() {
   }
 
   console.log("total joined chats ", total);
-  console.log("total two ", totalChats.length )
+  console.log("total two ", totalChats.length);
 
-  totalChats.forEach( async (chat)=> {
-      await Amino.leaveChat(community, chat.id, Amino.getMyUID());
-      console.log(`leaving ${chat.chatName}`);
+  totalChats.forEach(async (chat) => {
+    await Amino.leaveChat(community, chat.id, Amino.getMyUID());
+    console.log(`leaving ${chat.name}`);
   });
   await pause();
 }
