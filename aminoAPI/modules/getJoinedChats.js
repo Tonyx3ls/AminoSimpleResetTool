@@ -2,24 +2,22 @@ const fetch = require('isomorphic-fetch');
 const endpoints = require('../helpers/endpoints.js');
 const { getConfig } = require('../Amino');
 
-module.exports = async function getJoinedChats(com) {
+module.exports = async function getJoinedChats(com,start, size) {
 
     const sid = getConfig('sid');
     const deviceID = getConfig('deviceId');
-    const sig = getConfig('sig');
     const user_agent = getConfig('user_agent');
     if (typeof sid != 'string' || typeof com !== 'string') {
         throw new Error('All Arguments are not satisfied.');
     }
     let body;
     try {
-        const response = await fetch(endpoints.getJoinedChats(com), {
+        const response = await fetch(endpoints.getJoinedChats(com, start,size), {
             headers: {
                 'Accept-Encoding': 'gzip',
                 "Accept-Language": "en-US",
                 'NDCDEVICEID': deviceID,
                 "user_agent": user_agent,
-                "device_id_sig": sig,
                 'NDCAUTH': `sid=${sid}`
             },
         });

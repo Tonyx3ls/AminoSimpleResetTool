@@ -7,7 +7,6 @@ module.exports = async function leaveChat(com, chatId, userId) {
 
     const sid = getConfig('sid');
     const deviceID = getConfig('deviceId');
-    const sig = getConfig('sig');
     const user_agent = getConfig('user_agent');
     let body;
 
@@ -20,7 +19,6 @@ module.exports = async function leaveChat(com, chatId, userId) {
             headers: {
                 'NDCDEVICEID': deviceID,
                 "user_agent": user_agent,
-                "device_id_sig": sig,
                 'NDCAUTH': `sid=${sid}`
             },
         });

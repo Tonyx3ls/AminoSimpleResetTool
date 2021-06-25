@@ -6,7 +6,7 @@ module.exports = {
     getComs: prefix + '/v1/g/s/community/joined?start=0&size=50',
     upload: prefix + '/v1/g/s/media/upload',
     linkResolution: (q) => `${prefix}/v1/g/s/link-resolution?q=${q}`,
-    getJoinedChats: (com) => `${prefix}/v1/${com}/s/chat/thread?&type=joined-me&start=0&size=60`,
+    getJoinedChats: (com, start, size) => `${prefix}/v1/${com}/s/chat/thread?&type=joined-me&start=${start}&size=${size}`,
     loadChat: (com, uuid, count) => `${prefix}/v1/${com}/s/chat/thread/${uuid}/message?start=0&size=${count}&cv=v1.2`,
     loadChatTwo: (com, uuid, count) => `${prefix}/v1/${com}/s/chat/thread/${uuid}/message?start=100&size=${count}&cv=v1.2`,
     postBlog: (com) => `${prefix}/v1/${com}/s/blog/`,

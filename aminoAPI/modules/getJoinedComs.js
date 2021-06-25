@@ -7,12 +7,14 @@ const { getConfig, errorMessages } = require('../Amino');
 
 
 module.exports = async function getJoinedComs() {
+
     let communityList = objs.communityList;
     communityList.coms = [];
+
     const sid = getConfig('sid');
     const deviceID = getConfig('deviceId');
-    const sig = getConfig('sig');
     const user_agent = getConfig('user_agent');
+
     if (typeof sid != 'string') {
         throw new Error(errorMessages.missingSid);
     }
@@ -21,12 +23,11 @@ module.exports = async function getJoinedComs() {
             headers: {
                 'NDCDEVICEID': deviceID,
                 "user_agent": user_agent,
-                "device_id_sig": sig,
                 'NDCAUTH': `sid=${sid}`
             }
         });
         const body = await response.json();
-        //console.log('result get coms: ', body);
+        
         body.communityList.forEach((element) => {
             communityList.coms.push(sorter.comSort(element));
         });

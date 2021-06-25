@@ -1,10 +1,3 @@
-/**
- * A File for sorting Enpointresponses
- * @module Amino.JS_Sorter
- * @author RobStyling
- * @version 0.1
- * @beta
- */
 
 module.exports = {
     threadSort: (element) => {
