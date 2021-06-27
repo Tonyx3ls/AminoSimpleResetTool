@@ -1,7 +1,7 @@
 {
   "name": "aminoprofilereset",
   "version": "1.0.0",
-  "description": "A simple script to erase all comments in your Amino profile app",
+  "description": "A simple script that will help you to leave all the chats that you have joined in your Amino account",
   "main": "profileResetTools.amino.js",
   "scripts": {
     "test": "test"
