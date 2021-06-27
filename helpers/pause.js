@@ -1,11 +1,11 @@
 let inquirer = require('inquirer');
 
-async function pause() {
+async function pause(message) {
     const question = [
       {
         type: "input",
         name: "enter",
-        message: `Press ${"enter".red} to continue`,
+        message: message,
       },
     ];
   

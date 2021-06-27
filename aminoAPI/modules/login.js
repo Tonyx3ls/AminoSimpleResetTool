@@ -11,9 +11,6 @@ module.exports = async function login(email, password) {
     let user_agent = headers.userAgent;
     let deviceID = headers.deviceID;
     let sid;
-
-    console.log(user_agent, deviceID);
-
     try {
         const response = await fetch(endpoints.login, {
             method: 'POST',
