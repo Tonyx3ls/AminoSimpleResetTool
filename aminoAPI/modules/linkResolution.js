@@ -6,7 +6,6 @@ module.exports = async function linkResolution(link) {
 
     const sid = getConfig('sid');
     const deviceID = getConfig('deviceId');
-    const sig = getConfig('sig');
     const user_agent = getConfig('user_agent');
     let linkInfo;
 
@@ -23,7 +22,6 @@ module.exports = async function linkResolution(link) {
             headers: {
                 'NDCDEVICEID': deviceID,
                 "user_agent": user_agent,
-                "device_id_sig": sig,
                 'NDCAUTH': `sid=${sid}`
             },
         });
