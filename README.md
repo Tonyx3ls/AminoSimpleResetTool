@@ -18,7 +18,7 @@ A simple script that will help you to leave all the chats that you have joined i
       
 3. Clone the repository to your device.
 
-      ```git clone https://github.com/Tonyx3ls/aminoSimpleResetTool.git``` 
+      ```git clone https://github.com/fixmybugs/aminoSimpleResetTool.git``` 
 
 4. Enter to the resulting folder "aminoSimpleResetTool".
 
